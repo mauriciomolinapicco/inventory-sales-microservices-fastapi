@@ -72,4 +72,4 @@ async def create(request: Request, background_tasks: BackgroundTasks):
 def order_completed(order: Order):
     order.status = 'completed'
     order.save()
-    redis.xadd('order_completed', order.dict(), '*') # send a redis stream, similar to rabbitmq events or kafka
+    redis.xadd('order_completed', order.dict(), '*') # send a redis stream, similar to rabbitmq events or
